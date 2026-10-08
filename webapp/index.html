@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Крестики-нолики</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg"></div>
+  <main id="app">
+    <header class="top">
+      <div class="brand">XO ARENA</div>
+      <div class="online" id="onlinePill">онлайн —</div>
+    </header>
+
+    <section id="screen-home" class="screen active">
+      <h1 class="hero-title">Крестики<br /><span>нолики</span></h1>
+      <p class="hero-sub">Отдельное окно, как у мини-игр в Telegram</p>
+      <div class="actions">
+        <button class="btn primary" id="btnFind">Найти соперника</button>
+        <button class="btn" id="btnBotEasy">Против бота · лёгкий</button>
+        <button class="btn" id="btnBotHard">Против бота · сложный</button>
+        <button class="btn ghost" id="btnStats">Моя статистика</button>
+      </div>
+    </section>
+
+    <section id="screen-queue" class="screen">
+      <div class="pulse"></div>
+      <h2>Ищем соперника…</h2>
+      <p class="muted" id="queueInfo">В очереди: 1</p>
+      <button class="btn ghost" id="btnCancelQueue">Отмена</button>
+    </section>
+
+    <section id="screen-game" class="screen">
+      <div class="vs" id="vsLine"></div>
+      <div class="status" id="statusLine">Твой ход</div>
+      <div class="board" id="board"></div>
+      <div class="game-actions">
+        <button class="btn" id="btnAgain" hidden>Реванш</button>
+        <button class="btn ghost" id="btnHome">В меню</button>
+      </div>
+    </section>
+
+    <section id="screen-stats" class="screen">
+      <h2>Статистика</h2>
+      <pre class="stats" id="statsBox"></pre>
+      <button class="btn ghost" id="btnStatsBack">Назад</button>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
